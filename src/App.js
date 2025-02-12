@@ -1,10 +1,10 @@
 import React from "react";
-import TicketForm from "./TicketForm";
+import TicketBooking from "./TicketBooking";
 
 function App() {
   return (
     <div>
-      <TicketForm />
+      <TicketBooking />
     </div>
   );
 }
