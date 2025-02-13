@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Confetti from "react-confetti";
 import "./App.css";
 
 const TicketBooking = () => {
@@ -9,7 +8,6 @@ const TicketBooking = () => {
   const [userData, setUserData] = useState({ name: "", email: "", photo: "" });
   const [previewPhoto, setPreviewPhoto] = useState(null);
   const [showError, setShowError] = useState(false);
-  const [showConfetti, setShowConfetti] = useState(false);
 
   const handleTicketSelection = (ticketType) => {
     setSelectedTicket(ticketType);
@@ -23,8 +21,6 @@ const TicketBooking = () => {
       if (userData.name && emailPattern.test(userData.email) && previewPhoto) {
         setUserData({ ...userData, photo: previewPhoto });
         setStep(3);
-        setShowConfetti(true);
-        setTimeout(() => setShowConfetti(false), 5000);
       } else {
         setShowError(true);
       }
@@ -60,12 +56,10 @@ const TicketBooking = () => {
     setUserData({ name: "", email: "", photo: "" });
     setPreviewPhoto(null);
     setShowError(false);
-    setShowConfetti(false);
   };
 
   return (
     <div className="container">
-      {showConfetti && <Confetti />} 
       <h2 className="title">🎉 Techember Fest "25 🎟️</h2>
       <p className="event-details">Join us for an unforgettable experience! 🕺💃</p>
       <p className="event-info">📍 Event Location | 🕒 March 15, 2025 | 7:00 PM</p>
@@ -140,8 +134,8 @@ const TicketBooking = () => {
       {step === 3 && (
         <div className="ticket-ready fade-in">
           <h2>✅ Your Ticket is Booked!</h2>
-          <p>Name : {userData.name} 🎉</p>
-          <p>Email : {userData.email} 📩</p>
+          <p>{userData.name} 🎉</p>
+          <p>{userData.email} 📩</p>
           {userData.photo && <img src={userData.photo} alt="Profile" />}
           <div className="buttons">
             <button>📥 Download Ticket</button>
