@@ -59,7 +59,19 @@ const TicketBooking = () => {
   };
 
   return (
-    <div className="container">
+    <>
+      <div className="navBar">
+        <nav className="navbar">
+          <div className="logo">ticz</div>
+          <div className="nav-links">
+            <a href="#">Events</a>
+            <a href="#">My Tickets</a>
+            <a href="#">About Project</a>
+          </div>
+          <button className="my-tickets-btn">MY TICKETS →</button>
+        </nav>
+      </div>
+      <div className="container">
       <h2 className="title">🎉 Techember Fest "25 🎟️</h2>
       <p className="event-details">Join us for an unforgettable experience! 🕺💃</p>
       <p className="event-info">📍 Event Location | 🕒 March 15, 2025 | 7:00 PM</p>
@@ -80,6 +92,9 @@ const TicketBooking = () => {
               onClick={() => handleTicketSelection("VIP")}
             >
               $150 (VIP Access) 🌟
+            </button>
+            <button className={selectedTicket === "Premium" ? "selected" : ""} onClick={() => handleTicketSelection("Premium")}>
+              $250 (VVIP Access) 🏆
             </button>
           </div>
           <label htmlFor="numTickets">🎟️ Select Number of Tickets:</label>
@@ -144,6 +159,7 @@ const TicketBooking = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
 
