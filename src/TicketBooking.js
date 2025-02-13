@@ -134,8 +134,8 @@ const TicketBooking = () => {
       {step === 3 && (
         <div className="ticket-ready fade-in">
           <h2>✅ Your Ticket is Booked!</h2>
-          <p>{userData.name} 🎉</p>
-          <p>{userData.email} 📩</p>
+          <p>Name : {userData.name} 🎉</p>
+          <p>Email : {userData.email} 📩</p>
           {userData.photo && <img src={userData.photo} alt="Profile" />}
           <div className="buttons">
             <button>📥 Download Ticket</button>
