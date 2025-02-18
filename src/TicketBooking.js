@@ -1,7 +1,6 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Upload } from "lucide-react"
 import "./App.css"
 
 const TicketBooking = () => {
