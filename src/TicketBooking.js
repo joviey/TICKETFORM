@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import { Upload } from "lucide-react"
 import "./App.css"
 
 const TicketBooking = () => {
@@ -95,7 +96,7 @@ const TicketBooking = () => {
                   <br />
                   [Event Name]! Secure your spot now.
                 </p>
-                <p className="event-details"> [Event Location] || March 15, 2025 | 7:00 PM</p>
+                <p className="event-details">📍 [Event Location] || March 15, 2025 | 7:00 PM</p>
               </div>
 
               <div className="ticket-section">
@@ -238,8 +239,8 @@ const TicketBooking = () => {
                 <div className="ticket-card">
                   <h2>Techember Fest '25</h2>
                   <div className="ticket-details">
-                    <p> 04 Rumens road, Ikoyi, Lagos</p>
-                    <p> March 15, 2025 | 7:00 PM</p>
+                    <p>📍 04 Rumens road, Ikoyi, Lagos</p>
+                    <p>📅 March 15, 2025 | 7:00 PM</p>
                   </div>
 
                   {previewPhoto && (
